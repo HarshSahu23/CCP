@@ -1,34 +1,41 @@
 //Uniformity Matrix
+import Helpers.*;
 public class p13
 {
     public static void main(String[] args)
     {
-        // int[][] B = {{7,5,9},{23,1,3},{7,3,5}};
-        int[][] B = {{4,6,8,},{2,0,6},{10,14,8}};
-        boolean allOdd = true;
-        boolean allEven = true;
+        int[][] B = GenerateMatrix.generateMatrix(3, 3, false, 100);
+        boolean allOdd = true;boolean allEven = true;
         System.out.println("Printing the matrix ... ");
+        PrintMatrix.printMatrix(B);
+
+
         for (int[] i : B) {
             for (int j : i) {
                 if (j%2!=0) {
                     allEven=false;
-                    break;
                 }
-                if (j%2==0) {
-                    allOdd=false;
-                    break;
-                }
-                System.out.print(j+", ");
             }
-            System.out.println();
         }
-
         if (allEven) {
             System.out.println("All elements are even");
         }
 
+        for (int[] i : B) {
+            for (int j : i) {
+                if (j%2==0) {
+                    allOdd=false;
+                }
+            }
+        }
         if (allOdd) {
             System.out.println("All elements are odd");
         }
+
+        if (!allEven&&!allOdd) {
+            System.out.println("Not a uniformity matrix");
+        }
+
+    
     }
 }

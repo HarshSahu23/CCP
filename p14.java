@@ -1,18 +1,14 @@
+import Helpers.*;
+
 public class p14
 {
     public static void main(String[] args)
     {
-        int[][] A = {{4,6,8,},{2,0,6},{10,14,8}};
+        int[][] A = GenerateMatrix.generateMatrix(3, 3, false, 10);
 
         int maxSumRow=0,maxSumCol=0;
         System.out.println("Printing the matrix ...");
-        for (int[] i : A) {
-            for (int j : i) {
-                System.out.print(j+",");
-            }
-            System.out.println();
-            
-        }
+        PrintMatrix.printMatrix(A);
         System.out.println("\n");
         int count=0;
         for (int[] i : A) {

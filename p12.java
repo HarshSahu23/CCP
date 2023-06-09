@@ -1,27 +1,20 @@
 //Product of matrix
+import Helpers.*;
 public class p12
 {
     public static void main(String[] args)
     {
         // int[][] A = new int[3][2];
         // int[][] B = new int[2][3];
-        int[][] A = {{1,2},{4,9},{5,0}};
-        int[][] B = {{7,5,6},{8,1,3}};
-
+        
+        int[][] A = GenerateMatrix.generateMatrix(3, 2, false,10);
+        int[][] B = GenerateMatrix.generateMatrix(2, 3, false,10);
         System.out.println("\n\nprinting the 1st matrix : ");
-        for (int[] i : B) {
-            for (int j : i) {
-                System.out.print(j+", ");
-            }
-            System.out.println();
-        }
+        PrintMatrix.printMatrix(A);
+        
         System.out.println("\n*********************\n\nPrinting the 2nd Matrix:");
-        for (int[] i : A) {
-            for (int j : i) {
-                System.out.print(j+", ");
-            }
-            System.out.println();
-        }
+        PrintMatrix.printMatrix(B);
+        
         int rowA = A.length;
         int colB = B[0].length;
 
@@ -38,11 +31,7 @@ public class p12
             }
         }
         System.out.println("\n\n********************\nProduct : ");
-        for (int[] i : product) {
-            for (int j : i) {
-                System.out.print(j+", ");
-            }
-            System.out.println();
-        }
+        PrintMatrix.printMatrix(product);
+        
     }
 }
