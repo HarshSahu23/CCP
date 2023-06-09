@@ -1,4 +1,4 @@
-// import java.util.*;
+//Sum of all even & odd numbers in a matrix
 public class p10
 {
     public static void main(String[] args)
