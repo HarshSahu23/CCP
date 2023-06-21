@@ -1,3 +1,5 @@
+//can be also done with the help of boolean array
+
 import java.util.*;
 public class p19
 {
