@@ -1,5 +1,5 @@
 import java.util.*;
-public class strobogrammatic
+public class Strobogrammatic
 {
     public static boolean isStrobogrammatic(String n)
     {

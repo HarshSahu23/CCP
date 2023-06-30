@@ -1,5 +1,5 @@
 import java.util.*;
-public class BinaryPalindrom
+public class BinaryPalindrome
 {
     public static boolean BinaryPalindrome(String bin)
     {
@@ -24,5 +24,6 @@ public class BinaryPalindrom
         String binNum = sc.nextLine();
         boolean ans = BinaryPalindrome(binNum);
         System.out.println(ans);
+        sc.close();
     }
 }

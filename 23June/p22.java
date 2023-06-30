@@ -1,5 +1,5 @@
 //Relative Prime -- two numbers whose GCD = 1;
-//Calculating GCd
+//Calculating GCD
 
 
 import Helpers.*;
