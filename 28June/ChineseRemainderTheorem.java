@@ -11,7 +11,7 @@ public class ChineseRemainderTheorem
         
         
         System.out.print("How many equations you want to enter : ");
-        int size = sc.nextInt();
+        int size = sc.nextInt();sc.nextLine();
         int[] a = new int[size];
         int[] m = new int[size];
         String input="";String[] inputArray = new String[2];

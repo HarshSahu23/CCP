@@ -23,7 +23,9 @@ public class ToggleTheSwitch
 
         for (int i = 1; i <= n; i++) {
             for (int j = i-1; j <n; j=j+i) {
-                switches[j]=switches[j]==true?false:true;
+                switches[j]=  (switches[j]==true)?
+                                            false
+                                            :true;
             }
 
             //printing the states of the switches after each loop

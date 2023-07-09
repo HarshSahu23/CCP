@@ -23,12 +23,12 @@ public class SimpleSieve
             sb.append("-");
         }
         String F =  sb.toString();
-        for (int i = 0; i < n; i++) {
+        for (int i = 2; i < n; i++) {
             if (i%((int)Math.sqrt(n))==0) {
                 System.out.println();
             }
             if (isPrime[i]==true) {
-                System.out.printf(" %2d ", i);
+                System.out.printf(" %3d ", i);
             }
             else{
                 System.out.print(" "+F+" ");
