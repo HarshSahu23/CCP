@@ -42,7 +42,7 @@ public class HourGlass
         int cols = sc.nextInt();
         System.out.println();
 
-        int[][] arr = GenerateMatrix.generateMatrix(rows, cols, false, 10);
+        int[][] arr = GenerateMatrix.generateMatrix(rows, cols, false, 1000);
         System.out.println();
         PrintMatrix.printMatrix(arr);
         System.out.println();
