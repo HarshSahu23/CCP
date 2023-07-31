@@ -10,7 +10,7 @@ public class KaratsubaAlgo
             max=max/10;n++;
         }
         if (n%2!=0) {
-            n+=1; //0
+            n+=1; //0123
         }
         long A = X/((int)Math.pow(10, (n/2)));
         long B = X%((int)Math.pow(10, (n/2)));
@@ -24,7 +24,7 @@ public class KaratsubaAlgo
         long bc = B*C;
 
         long ans = (ac*((long)Math.pow(10, n)))+
-                    ((ad+bc)*(long)Math.pow(10, (n/2)))+
+                   ((ad+bc)*(long)Math.pow(10, (n/2)))+
                     bd;
 
         // System.out.println(A);
@@ -46,5 +46,6 @@ public class KaratsubaAlgo
         
         long ans = KS(n1, n2);
         System.out.println(ans);
+        sc.close();
     }
 }
