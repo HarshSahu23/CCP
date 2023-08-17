@@ -1,3 +1,4 @@
+package temp;
 import java.util.*;
 
 public class LexicographicalPalindrome {

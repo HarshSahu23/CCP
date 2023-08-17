@@ -1,0 +1,9 @@
+
+Real-time session stores - Store ephemeral session data to quickly personalize gaming, e-commerce, social media, and online applications with microsecond response times
+Real-time leaderboards - Simplify application development with ElastiCache built-in data structures.
+
+Real-time leaderboards
+Simplify application development with ElastiCache built-in data structures.
+
+
+

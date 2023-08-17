@@ -1,57 +1,61 @@
-// import java.util.*;
-
-import java.util.Arrays;
-
-public class Maze
-{
-    
-    public void display(int[][] disp)
-    {
-        for (int[] i : disp) {
-            for (int j : i) {
-                System.out.println(j+" ");
-            }
-            System.out.println();
-        }
+import Helpers.PrintMatrix;
+public class Maze {
+    public static boolean isSafe(int[][] maze, int[][] visited, int x, int y, int n) {
+        // Check if the current position is within the maze boundaries and is a valid move.
+        return (x >= 0 && x < n && y >= 0 && y < n && maze[x][y] == 1 && visited[x][y] == 0);
     }
-    
-    public static int maze(int[][] A, int i , int j, int n, int[][] S)
-    {
-        if (i==n-1&&j==n-1&&A[i][j]==1) {
-            S[i][j]=1;
-            return 1;
+
+    public static boolean traverseMaze(int[][] maze, int[][] visited, int x, int y, int n) {
+        // If we have reached the destination, return true.
+        if (x == n - 1 && y == n - 1) {
+            visited[x][y] = 1;
+            return true;
         }
-        if ((A[i][j]==1)&&(i>0&&i<n)&&(j<0&&j<n)) {
-            S[i][j]=1;
-            if (maze(A, i, j+1, n, S)==1) {
-                return 1;
+
+        // Check if the current position is a valid move.
+        if (isSafe(maze, visited, x, y, n)) {
+            // Mark the current position as visited (1).
+            visited[x][y] = 1;
+
+            // Move right
+            if (traverseMaze(maze, visited, x + 1, y, n)) {
+                return true;
             }
-            if (maze(A, i+1, j, n, S)==1) {
-                return 1;
+            // Move down
+            if (traverseMaze(maze, visited, x, y + 1, n)) {
+                return true;
             }
-            S[i][j]=0;
-            return 0;
+
+            // If we reach here, it means both right and down moves are not valid, so backtrack.
+            // Reset the current position as unvisited (0).
+            visited[x][y] = 0;
         }
-        return 0;
+
+        // If the current position is not a valid move, backtrack.
+        return false;
     }
-    public static void main(String[] args)
-    {
+
+    public static void main(String[] args) {
+        int n = 5; // Size of the maze (nxn)
+        int[][] maze = {
+            {1, 0, 1, 1, 0},
+            {1, 1, 0, 1, 0},
+            {0, 1, 1, 1, 0},
+            {1, 1, 0, 1, 1},
+            {0, 1, 0, 0, 1}
+        };
+        int[][] visited = new int[n][n]; // Initialize the visited matrix with all zeros
+        System.out.println("\n\nName = Harsh Sahu");
+        System.out.println("Reg. No = 21BSA10129");
+        System.out.println("\nOriginal Maze : ");
+        PrintMatrix.printMatrix(maze);
         System.out.println();
-
-        int[][] M = {{1,1,0,1},{1,0,1,1},{1,1,1,0},{0,0,1,1}};
-        int[][] S = new int[4][4];
-
-        int[] t = {0,0,0,0};
-        Arrays.fill(S,t);
-        
-        int ans = maze(M, 0, 0, 4, S);
-        System.out.println(ans);
-
-        for (int[] i : S) {
-            for (int j : i) {
-                System.out.print(j+" ");
-            }
-            System.out.println();
+        if (traverseMaze(maze, visited, 0, 0, n)) {
+            System.out.println("Path found! The maze is traversable.");
+        } else {
+            System.out.println("No path found! The maze is not traversable.");
         }
+        System.out.println("\nPath from Source to Destination");
+        PrintMatrix.printMatrix(visited);
     }
 }
