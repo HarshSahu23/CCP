@@ -6,7 +6,7 @@ import java.util.*;
 
 public class GenerateMatrix
 {
-    public static int[][] generateMatrix(int row, int column, boolean display,int bound)
+    public static int[][] generateSquareMatrix(int row, int column, boolean display,int bound)
     {
         Random random = new Random();
         int[][] arr = new int[row][column];
@@ -17,6 +17,20 @@ public class GenerateMatrix
         }
         if (display) {
             displayMatrix(arr);
+        }
+        return arr;
+    }
+    public static int[] generateLinearMatrix(int row, boolean display,int bound)
+    {
+        Random random = new Random();
+        int[] arr = new int[row];
+        for (int i = 0; i < row; i++) {
+            arr[i]=random.nextInt(bound+1);
+        }
+        if (display) {
+            for (int i : arr) {
+                System.out.print(i+", ");
+            }
         }
         return arr;
     }

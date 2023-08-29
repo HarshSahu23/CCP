@@ -5,7 +5,29 @@ package Helpers;
 
 public class PrintMatrix {
     
-    public static void printMatrix(int[][] matrix) {
+    public static void printMatrixLinear(int[] matrix) {
+        System.out.println();
+        int rows = matrix.length;
+        int maxLength = 0;
+        for (int i : matrix) {
+            int tempLength = String.valueOf(matrix[i]).length();
+            if (tempLength>=maxLength) {
+                maxLength=tempLength;
+            }
+        }
+        String format = "%" + maxLength + "d";
+        for (int i = 0; i < rows; i++) {
+            System.out.printf(format, matrix[i]);
+            if (i < rows - 1) {
+                System.out.print(", ");
+            }
+            if (i==Math.floor(Math.sqrt(rows))) {
+                System.out.println();
+            }
+        }
+        System.out.println();
+    }
+    public static void printMatrixSquare(int[][] matrix) {
         int rows = matrix.length;
         int cols = matrix[0].length;
         int maxLength = getMaxElementLength(matrix);
